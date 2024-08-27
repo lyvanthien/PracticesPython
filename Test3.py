@@ -10,7 +10,7 @@ print(add(1,2))
 print(add(1,2,3)) # Error
 
 """
-
+"""
 def add(*args):
     sum = 0
     for i in args:
@@ -18,7 +18,7 @@ def add(*args):
     return sum
 
 print(add(1,2,3))
-
+"""
 def add1(*stuff):
     sum = 0
     stuff= list(stuff)
@@ -28,3 +28,4 @@ def add1(*stuff):
     return sum
 
 print(add1(1,2,3,4,5,6))
+
