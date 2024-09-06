@@ -1,0 +1,67 @@
+Index: Test1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># str.format() = optional method that gives users\r\n#                   more control when displaying output\r\n\r\nnumber = 15\r\nnumber1 = 3.14159\r\nprint(\"The number pi is {:.3f}\".format(number1))\r\nprint(\"The number is {:,}\".format(number))\r\nprint(\"The number is {:b}\".format(number))\r\nprint(\"The number is {:o}\".format(number))\r\nprint(\"The number is {:X}\".format(number))\r\nprint(\"The number is {:E}\".format(number))\r\n\r\nanimal = \"cow\"\r\nitem = \"moon\"\r\n\r\n# print(\"The \"+animal+\" jumped over the \"+item)\r\n# print(\"The {} jumped over the {}\".format(animal,item))\r\n# print(\"The {0} jumped over the {1}\".format(animal,item))    # positional argument\r\n# print(\"The {animal} jumped over the {item}\".format(animal=\"cow\",item=\"moon\")) #keyword argument\r\n# print(\"The {item} jumped over the {animal}\".format(animal=\"cow\",item=\"moon\")) #keyword argument\r\n\r\ntext = \"The {} jumped over the {}\"\r\nprint(text.format(animal,item))\r\n\r\nname = \"Thien\"\r\n\r\nprint(\"Hello, my name is {}\".format(name))\r\nprint(\"Hello, my name is {:10}. Nice to meet you\".format(name))\r\nprint(\"Hello, my name is {:5}. Nice to meet you\".format(name))\r\nprint(\"Hello, my name is {:<10}. Nice to meet you\".format(name))\r\nprint(\"Hello, my name is {:>10}. Nice to meet you\".format(name))\r\nprint(\"Hello, my name is {:^10}. Nice to meet you\".format(name))\r\n\r\n\r\n\r\n\r\n
+===================================================================
+diff --git a/Test1.py b/Test1.py
+--- a/Test1.py	(revision be010b5c19e8f12a223898d6adb2e29f011bcdca)
++++ b/Test1.py	(date 1725669010998)
+@@ -10,27 +10,6 @@
+ print("The number is {:X}".format(number))
+ print("The number is {:E}".format(number))
+ 
+-animal = "cow"
+-item = "moon"
+-
+-# print("The "+animal+" jumped over the "+item)
+-# print("The {} jumped over the {}".format(animal,item))
+-# print("The {0} jumped over the {1}".format(animal,item))    # positional argument
+-# print("The {animal} jumped over the {item}".format(animal="cow",item="moon")) #keyword argument
+-# print("The {item} jumped over the {animal}".format(animal="cow",item="moon")) #keyword argument
+-
+-text = "The {} jumped over the {}"
+-print(text.format(animal,item))
+-
+-name = "Thien"
+-
+-print("Hello, my name is {}".format(name))
+-print("Hello, my name is {:10}. Nice to meet you".format(name))
+-print("Hello, my name is {:5}. Nice to meet you".format(name))
+-print("Hello, my name is {:<10}. Nice to meet you".format(name))
+-print("Hello, my name is {:>10}. Nice to meet you".format(name))
+-print("Hello, my name is {:^10}. Nice to meet you".format(name))
+-
+ 
+ 
+ 
+Index: Test3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#   *args  = parameter that will pack all arguments into a  tuple\r\n#            useful so that a function can accept a varying amount of arguments\r\n\r\n\"\"\"\r\ndef add(num1, num2):\r\n    sum =num1+num2\r\n    return  sum\r\n\r\nprint(add(1,2))\r\nprint(add(1,2,3)) # Error\r\n\r\n\"\"\"\r\n\r\ndef add(*args):\r\n    sum = 0\r\n    for i in args:\r\n        sum += i\r\n    return sum\r\n\r\nprint(add(1,2,3))\r\n\r\ndef add1(*stuff):\r\n    sum = 0\r\n    stuff= list(stuff)\r\n    stuff[0] = 0\r\n    for i in stuff:\r\n        sum += i\r\n    return sum\r\n\r\nprint(add1(1,2,3,4,5,6))\r\n
+===================================================================
+diff --git a/Test3.py b/Test3.py
+--- a/Test3.py	(revision be010b5c19e8f12a223898d6adb2e29f011bcdca)
++++ b/Test3.py	(date 1725668823370)
+@@ -10,7 +10,7 @@
+ print(add(1,2,3)) # Error
+ 
+ """
+-
++"""
+ def add(*args):
+     sum = 0
+     for i in args:
+@@ -18,7 +18,7 @@
+     return sum
+ 
+ print(add(1,2,3))
+-
++"""
+ def add1(*stuff):
+     sum = 0
+     stuff= list(stuff)
+@@ -28,3 +28,4 @@
+     return sum
+ 
+ print(add1(1,2,3,4,5,6))
++

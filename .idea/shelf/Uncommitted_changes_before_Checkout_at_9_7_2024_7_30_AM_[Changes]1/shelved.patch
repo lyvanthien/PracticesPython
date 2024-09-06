@@ -1,0 +1,24 @@
+Index: Test2.py
+===================================================================
+diff --git a/Test2.py b/Test2.py
+deleted file mode 100644
+--- a/Test2.py	(revision be010b5c19e8f12a223898d6adb2e29f011bcdca)
++++ /dev/null	(revision be010b5c19e8f12a223898d6adb2e29f011bcdca)
+@@ -1,17 +0,0 @@
+-# **kwargs = parameter that will pack all armuments into a  dictionary
+-#            useful so that a function can accept a varying amount of keyword armuments
+-
+-def hello(first, last):
+-    print("Hello " + first+ " "+ last)
+-
+-hello(first="Ly", last="Thien")
+-# hello(first="Ly", middle="Van", last="Thien")  # Error
+-
+-def hello1(**kwargs):
+-    #print("Hello "+ kwargs['first']+ " "+kwargs['last'] )
+-    print("Hello1", end=" ")
+-    for key,value in kwargs.items():
+-        print(value,end=" ")
+-
+-#hello1(first="Ly", middle="Van", last="Thien")
+-hello1(title = "Mr.",first="Ly", middle="Van", last="Thien")
